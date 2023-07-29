@@ -1,0 +1,22 @@
+<form #formDirective="ngForm" (ngSubmit)="updateData(formDirective)" [formGroup]="updateProductTypeForm">
+  <mat-dialog-content>
+  <div class="main-outer">
+    <div class="info-outer">
+      <div class="row input-rows">
+        <div class="product-type-name-outer column col-12 col-sm-6">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Product Type Name</mat-label>
+              <input formControlName="productTypeName" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<div class="button-outer">
+  <button [disabled]="updateProductTypeForm.invalid" type="submit" color="primary" mat-raised-button>Update</button>&nbsp;
+  <button mat-dialog-close mat-raised-button>Cancel</button>
+</div>
+</form>

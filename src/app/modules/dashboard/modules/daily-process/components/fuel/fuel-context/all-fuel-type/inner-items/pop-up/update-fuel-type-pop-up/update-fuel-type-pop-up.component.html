@@ -1,0 +1,22 @@
+<form #formDirective="ngForm" (ngSubmit)="updateData(formDirective)" [formGroup]="updateFuelTypeForm">
+  <mat-dialog-content>
+    <div class="main-outer">
+      <div class="info-outer">
+        <div class="row input-rows">
+          <div class="fuel-type-name-outer column col-12 col-sm-12 col-lg-5 col-xl-4">
+            <div class="mat-form-field-outer">
+              <mat-form-field appearance="outline">
+                <mat-label>Fuel Type Name</mat-label>
+                <input formControlName="fuelTypeName" matInput type="text">
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <div class="button-outer">
+    <button [disabled]="updateFuelTypeForm.invalid" color="primary" mat-raised-button>Update</button>&nbsp;
+    <button (click)="closeDialog()" mat-raised-button>Cancel</button>
+  </div>
+</form>

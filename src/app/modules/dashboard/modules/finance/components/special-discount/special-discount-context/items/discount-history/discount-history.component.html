@@ -1,0 +1,57 @@
+
+<form [formGroup]="searchForm">
+  <div class="controller-outer">
+    <div class="text-input-inner">
+      <mat-icon> search</mat-icon>
+      <input formControlName="searchText" placeholder="Search here" [(ngModel)]="searchText" type="text">
+    </div>
+    <div class="maintain-time-range-outer">
+      <div class="mat-form-field-outer">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+              <input matStartDate formControlName="start" placeholder="Start date">
+              <input matEndDate formControlName="end" placeholder="End date"
+                     (dateChange)="searchWithDate()"
+              >
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="table-outer">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col" >Discount Name</th>
+      <th scope="col">Rate</th>
+      <th scope="col" >Start Date</th>
+      <th scope="col">End Date</th>
+<!--      <th scope="col">Other Data</th>-->
+<!--      <th scope="col">Manage Data</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let d of discountData" (click)="manageData(d)">
+      <td>{{d.discountName}}</td>
+      <td>{{d.rate}}</td>
+      <td>{{d.startDate | date:'d/M/y'}}</td>
+      <td>{{d.endDate | date:'d/M/y'}}</td>
+<!--      <td><button mat-flat-button color="primary" (click)="manageData(d)">Manage Data</button></td>-->
+    </tr>
+    </tbody>
+  </table>
+</div>
+<mat-paginator [length]=dataCount
+               [pageSize]=pageSize
+               [pageIndex]=page
+               [pageSizeOptions]=pageSizeOptions
+               (page)="pageEvent = getServerData($event)"
+               aria-label="Select page">
+</mat-paginator>
+

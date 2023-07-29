@@ -1,0 +1,27 @@
+<mat-nav-list>
+  <div  class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>edit_note</mat-icon>
+    </div>
+    <div class="left-data-set">
+      <a  mat-list-item (click)="updatePopUp($event)">
+        <span mat-line>Update This Payroll</span>
+        <span mat-line>click here to update selected payroll</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>delete_sweep</mat-icon>
+    </div>
+    <div class="left-data-set">
+      <a mat-list-item  (click)="deletePopUp($event)">
+        <span mat-line>Delete This Payroll</span>
+        <span mat-line>if you want to Delete the payroll click here</span>
+      </a>
+    </div>
+  </div>
+
+</mat-nav-list>
+

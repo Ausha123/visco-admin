@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  --active-tab-color: #34495E;
+  --header-color: #D35400;
+  --active-tab-text-color: white;
+  --row-background-color: #E5E5E5;
+  --save-button-text-color: white;
+  --save-button-background-color: #4D9CB9;
+  --image-outer-background-border-color: #c2c2c2;
+
+}

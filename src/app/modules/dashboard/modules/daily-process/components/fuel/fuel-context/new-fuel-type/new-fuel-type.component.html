@@ -1,0 +1,22 @@
+<form #formDirective="ngForm" (ngSubmit)="submitData(formDirective)" [formGroup]="newFuelTypeForm">
+  <div class="main-outer">
+    <div class="info-outer">
+      <div class="row input-rows">
+        <div class="fuel-type-name-outer column col-12 col-sm-12 col-lg-5 col-xl-4">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Fuel Type Name</mat-label>
+              <input formControlName="fuelTypeName" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="page-content-row bottom-button-set">
+        <button class="button registration-next" color="primary"
+                mat-flat-button>Save Product&nbsp;
+          <mat-icon>east</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

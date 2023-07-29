@@ -1,0 +1,42 @@
+<form [formGroup]="newAdvanceClearanceForm">
+  <div class="main-outer">
+    <div class="basic-info-outer">
+      <div class="first-row row input-rows">
+        <div class="advance-outer column col-12 col-sm-6 col-lg-4 col-xl-12">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>return money</mat-label>
+              <input formControlName="returnMoney" matInput type="number">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="date-outer column col-12 col-sm-6 col-lg-4 col-xl-12">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Choose a date</mat-label>
+              <input formControlName="date" matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker  #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <!--      <div class="employee-id-outer column col-12 col-sm-6 col-lg-4 col-xl-4">-->
+        <!--        <div class="mat-form-field-outer">-->
+        <!--          <mat-form-field appearance="outline">-->
+        <!--            <mat-label>Advance property Id</mat-label>-->
+        <!--            <mat-select>-->
+        <!--              <mat-option></mat-option>-->
+        <!--            </mat-select>-->
+        <!--          </mat-form-field>-->
+        <!--        </div>-->
+        <!--      </div>-->
+      </div>
+    </div>
+  </div>
+  <div class="page-content-row bottom-button-set">
+    <button class="button registration-next" color="primary"
+            mat-flat-button (click)="addAdvanceClearance()">Save Clearance
+      <mat-icon>east</mat-icon>
+    </button>
+  </div>
+</form>

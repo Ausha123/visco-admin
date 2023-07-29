@@ -1,0 +1,45 @@
+<form #formDirective="ngForm" (ngSubmit)="submitData(formDirective)" [formGroup]="newUnitTypeForm">
+  <div class="main-outer">
+    <div class="info-outer">
+      <div class="row input-rows">
+        <div class="unit-name-outer column col-12 col-sm-6 col-lg-5 col-xl-4">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Unit Type Name</mat-label>
+              <input formControlName="unitTypeName" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="symbol">
+          <mat-label>Symbol</mat-label>
+          <div
+            (mouseenter)="this.fileImageUploadHiddenEverything = '';this.fileImageOverlay = this.fileImageOverlayChecker"
+            (mouseleave)="this.fileImageUploadHiddenEverything = this.fileImageUploadHiddenEverythingChecker;this.fileImageOverlay = ''"
+            [ngStyle]="{'background-image': 'url('+ FileImageLink +')','background-size': 'cover','background-position':'center'}"
+            class="image-outer-background">
+            <div [ngStyle]="{'background-color':''+fileImageOverlay+''}" class="overlay">
+              <input #fileUpload (change)="onFileSelected($event)" [ngStyle]="{'display' : ''+fileImageUploadHiddenEverything+''}"
+                     class="file-input" type="file">
+              <div [ngStyle]="{'display' : ''+fileImageUploadHiddenEverything+''}" class="file-upload">
+                {{fileName || "No file uploaded yet."}}
+                <a (click)="fileUpload.click()" class="upload-btn" color="primary"
+                   mat-mini-fab>
+                  <mat-icon>attach_file</mat-icon>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content-row bottom-button-set">
+      <button [disabled]="newUnitTypeForm.invalid" class="button registration-next" color="primary"
+              mat-flat-button type="submit"
+      >Save Unit Type&nbsp;
+        <mat-icon>east</mat-icon>
+      </button>
+    </div>
+  </div>
+</form>
+
+

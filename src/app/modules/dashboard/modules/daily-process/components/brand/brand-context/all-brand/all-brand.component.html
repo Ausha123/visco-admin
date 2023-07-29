@@ -1,0 +1,50 @@
+<div class="all-brand-outer">
+  <form [formGroup]="searchForm">
+    <div class="controller-outer">
+      <div class="text-input-inner">
+        <mat-icon> search</mat-icon>
+        <input formControlName="searchText" placeholder="Search here" type="text">
+      </div>
+      <div class="availability-outer">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Active State</mat-label>
+            <mat-select (valueChange)="valueGetter($event)" [ngModel]="availability[0]"
+                        formControlName="activeState">
+              <mat-option (select)="brandActiveState" *ngFor="let type of availability"
+                          [value]="type">{{type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="table-outer">
+    <table>
+      <thead>
+      <tr>
+        <th scope="col">Brand Name</th>
+        <th scope="col">Active State</th>
+        <th scope="col">Display Image</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr (click)="openBottomSheet(brand)" *ngFor="let brand of allBrandsArray">
+        <td>{{brand?.brandName}}</td>
+        <td>{{brand?.activeState && 'Available' || 'Unavailable'}}</td>
+        <td><div class="image-outer">
+          <img src="{{brand?.displayImage}}" alt="">
+        </div></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<mat-paginator (page)="pageEvent = getServerData($event)"
+               [length]=dataCount
+               [pageIndex]=page
+               [pageSizeOptions]=pageSizeOptions
+               [pageSize]=pageSize
+               aria-label="Select page">
+</mat-paginator>

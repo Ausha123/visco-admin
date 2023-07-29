@@ -1,0 +1,28 @@
+<div class="all-unit-type-outer">
+  <form [formGroup]="searchForm">
+    <div class="controller-outer">
+      <div class="text-input-inner">
+        <mat-icon> search</mat-icon>
+        <input formControlName="searchText" placeholder="Search here" type="text">
+      </div>
+    </div>
+  </form>
+  <div class="table-outer">
+    <table>
+      <thead>
+      <tr>
+        <th scope="col">Product Name</th>
+        <th scope="col">Star Count</th>
+        <th scope="col">Message</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let review of allCustomerReviewsArray">
+        <td></td>
+        <td>{{review.star}}</td>
+        <td>{{review.message}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

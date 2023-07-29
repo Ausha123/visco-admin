@@ -1,0 +1,43 @@
+<h2 class="property-name">
+  {{fuelType.displayName}}
+</h2>
+<h5 class="property-id">
+  {{fuelType.fuelId}}
+</h5>
+<hr>
+
+<mat-nav-list>
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>published_with_changes</mat-icon>
+    </div>
+    <div class="left-data-set">
+      <a mat-list-item (click)="changeActiveState($event)">
+        <span mat-line>{{fuelType.activeState && 'Unavailable' || 'Available'}} this fuel type</span>
+        <span mat-line>if you want to Modify this product type must click here to {{fuelType.activeState && 'Unavailable' || 'Available'}} fuel type</span>
+      </a>
+    </div>
+  </div>
+  <div  class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>edit_note</mat-icon>
+    </div>
+    <div class="left-data-set" (click)="updatePopUp($event)">
+      <a mat-list-item>
+        <span mat-line>Update This Product Type</span>
+        <span mat-line>click here to update selected Product Type</span>
+      </a>
+    </div>
+  </div>
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>delete_sweep</mat-icon>
+    </div>
+    <div class="left-data-set" (click)="deletePopUp($event)">
+      <a mat-list-item >
+        <span mat-line>Delete This Product Type Permanently</span>
+        <span mat-line>if you want to Delete the Product Type click here</span>
+      </a>
+    </div>
+  </div>
+</mat-nav-list>

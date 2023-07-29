@@ -1,0 +1,48 @@
+<div class="all-fuel-type-outer">
+
+  <div class="controller-outer">
+    <form [formGroup]="searchForm">
+      <div class="text-input-inner">
+        <mat-icon> search</mat-icon>
+        <input formControlName="searchText" placeholder="Search here" type="text">
+      </div>
+    </form>
+    <div class="maintain-time-range-outer">
+      <div class="mat-form-field-outer">
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Enter a date range</mat-label>
+          <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
+            <input formControlName="start" matStartDate placeholder="Start date">
+            <input (dateChange)="searchWithDate()" formControlName="end" matEndDate
+                   placeholder="End date"
+            >
+          </mat-date-range-input>
+          <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="table-outer">
+    <table>
+      <thead>
+      <tr>
+        <th scope="col">Customer NIC</th>
+        <th scope="col">Return Note</th>
+        <th scope="col">Rent Date</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr (click)="openBottomSheet(data)" *ngFor="let data of allRentDataArray">
+        <td>{{data?.nic}}</td>
+        <td>{{data?.returnNote}}</td>
+        <td>{{data?.rentDate |date: 'd-MMM-y'}}</td>
+        <td>
+          <button color="accent" mat-raised-button>Acceped</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+<mat-nav-list>
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>sync_problem</mat-icon>
+    </div>
+    <div (click)="newAdvanceClearance($event)" class="left-data-set">
+      <a mat-list-item>
+        <span mat-line>New Advance Clearance</span>
+        <span mat-line>click here to Add New Damaged Data</span>
+      </a>
+    </div>
+  </div>
+  <div  class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>edit_note</mat-icon>
+    </div>
+    <div class="left-data-set">
+      <a  mat-list-item (click)="updatePopUp($event)">
+        <span mat-line>Update This Salary Advance</span>
+        <span mat-line>click here to update Salary Advance</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>delete_sweep</mat-icon>
+    </div>
+    <div class="left-data-set">
+      <a mat-list-item  (click)="deletePopUp($event)">
+        <span mat-line>Delete This Salary Advance</span>
+        <span mat-line>if you want to Delete the Salary Advance  click here</span>
+      </a>
+    </div>
+  </div>
+
+</mat-nav-list>

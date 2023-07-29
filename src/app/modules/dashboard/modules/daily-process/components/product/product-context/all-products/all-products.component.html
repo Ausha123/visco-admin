@@ -1,0 +1,72 @@
+<div class="all-products-outer">
+
+  <form [formGroup]="searchForm">
+    <div class="outer row">
+      <div class="controller-outer col-12 col-sm-6">
+        <div class="text-input-inner">
+          <mat-icon> search</mat-icon>
+          <input formControlName="searchText" placeholder="Search here" type="text">
+        </div>
+      </div>
+      <div class="availability-outer col-12 col-sm-3">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Availability</mat-label>
+            <mat-select (valueChange)="valueGetter($event)" [ngModel]="availability[0]"
+                        formControlName="productAvailability">
+              <mat-option (select)="productAvailability" *ngFor="let type of availability"
+                          [value]="type">{{type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="extra-state-outer col-12 col-sm-3">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Extra State</mat-label>
+            <mat-select (valueChange)="ExtraStateGetter($event)" [ngModel]="extraState[0]"
+                        formControlName="extraState">
+              <mat-option (select)="extraStateType" *ngFor="let type of extraState" [value]="type">{{type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </form>
+  <div class="table-outer">
+    <table>
+      <thead>
+      <tr>
+        <th scope="col">Product Name</th>
+        <th scope="col">Display Name</th>
+        <th scope="col">Available Units</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Serial</th>
+        <th scope="col" style="max-width: 500px">Product Guid Line</th>
+        <th scope="col">Hourly Cost</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr (click)="openBottomSheet(product)" *ngFor="let product of allProductsArray">
+        <td>{{product?.productName}}</td>
+        <td>{{product?.displayName}}</td>
+        <td>{{product?.availableUnit}}</td>
+        <td>{{product?.availability && 'Available' || 'Unavailable'}}</td>
+        <td>{{product?.brand}}</td>
+        <td>{{product?.serial}}</td>
+        <td style="max-width: 500px">{{product?.productGuideline}}</td>
+        <td>{{product?.hourlyCost}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<mat-paginator (page)="pageEvent = getServerData($event)"
+               [length]=dataCount
+               [pageIndex]=page
+               [pageSizeOptions]=pageSizeOptions
+               [pageSize]=pageSize
+               aria-label="Select page">
+</mat-paginator>

@@ -1,0 +1,113 @@
+<form #formDirective="ngForm" (ngSubmit)=" addEmployee(formDirective)" [formGroup]="newEmployeeForm">
+  <div class="main-outer">
+    <div class="row-wrapper row ">
+      <div class="full-name-outer column col-12 col-sm-12 col-lg-4 col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input formControlName="name" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="employee-email-outer column col-12 col-sm-12 col-lg-5 col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Employee Email</mat-label>
+            <input formControlName="email" matInput placeholder="Ex. someone@gmail.com" type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="address-outer column col-12 col-sm-6 col-lg col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input formControlName="address" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-wrapper row">
+      <div class="contact-outer column col-12 col-sm-6 col-lg col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>contact</mat-label>
+            <input formControlName="contact" matInput type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="nic-outer column col-12 col-sm-6 col-lg col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>NIC</mat-label>
+            <input formControlName="nic" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="gender-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="genderType">
+              <mat-option *ngFor="let type of gender_types" [value]="type.type">{{type.type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <div class="row-wrapper row">
+      <div class="payment-type-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Payment type</mat-label>
+            <mat-select formControlName="paymentType">
+              <mat-option (onSelectionChange)="$event" *ngFor="let type of payment_types"
+                          [value]="type.type">{{type.type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="dob-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input [matDatepicker]="picker" formControlName="date" matInput>
+            <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+<!--    <div class="row-wrapper image-outer">
+      <mat-label class="image-header">Image</mat-label>
+      <div
+        (mouseenter)="this.fileImageUploadHiddenEverything = '';this.fileImageOverlay = this.fileImageOverlayChecker"
+        (mouseleave)="this.fileImageUploadHiddenEverything = this.fileImageUploadHiddenEverythingChecker;this.fileImageOverlay = ''"
+        [ngStyle]="{'background-image': 'url('+ FileImageLink +')','background-size': 'cover','background-position':'center'}"
+        class="image-outer-background">
+        <div [ngStyle]="{'background-color':''+fileImageOverlay+''}" class="overlay">
+          <input #fileUpload (change)="onFileSelected($event)" [ngStyle]="{'display' : ''+fileImageUploadHiddenEverything+''}"
+                 class="file-input" type="file">
+          <div [ngStyle]="{'display' : ''+fileImageUploadHiddenEverything+''}" class="file-upload">
+            {{fileName || "No file uploaded yet."}}
+            <a (click)="fileUpload.click()" class="upload-btn" color="primary"
+               mat-mini-fab>
+              <mat-icon>attach_file</mat-icon>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+    <div class="page-content-row bottom-button-set">
+      <button type="submit" [disabled]="newEmployeeForm.invalid"
+              class="button registration-next" color="primary"
+              mat-flat-button>Save Employee
+        <mat-icon>east</mat-icon>
+      </button>
+    </div>
+  </div>
+</form>

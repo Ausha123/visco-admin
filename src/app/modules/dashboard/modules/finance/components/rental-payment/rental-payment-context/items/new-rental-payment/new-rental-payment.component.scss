@@ -1,0 +1,47 @@
+.main-outer{
+  padding: 10px 0 0 20px;
+}
+
+.column {
+  padding: 5px;
+}
+.mat-form-field-outer {
+  width: 100%;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+}
+
+.row-wrapper{
+  width: 100%;
+  padding-top: 18px;
+  margin: 0 -5px;
+}
+
+.row-wrapper:nth-child(odd){
+  background: var(--row-background-color);
+}
+
+
+.bottom-button-set {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.button {
+  width: 164px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  size: 14px;
+}
+
+.registration-next {
+  background-color: #4D9CB9;
+}

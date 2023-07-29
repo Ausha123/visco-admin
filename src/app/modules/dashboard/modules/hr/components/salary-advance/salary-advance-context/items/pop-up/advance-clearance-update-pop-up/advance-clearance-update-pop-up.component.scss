@@ -1,0 +1,61 @@
+.main-outer {
+  padding: 10px;
+}
+
+.first-row{
+  padding: 10px;
+}
+
+.column {
+  padding: 5px;
+}
+
+.flag {
+  width: 60px;
+  height: 28px;
+}
+
+
+.mat-form-field-outer {
+  width: 100%;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+}
+.bottom-button-set {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.button {
+  width: 164px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  size: 14px;
+}
+
+.registration-next {
+  background-color: #4D9CB9;
+}
+mat-form-field {
+  width: 100%;
+}
+.extra-note-full-width{
+  textarea{
+    height: 130px;
+    width: 100%;
+  }
+}
+.button-outer-2 {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  padding-right: 15px;
+}

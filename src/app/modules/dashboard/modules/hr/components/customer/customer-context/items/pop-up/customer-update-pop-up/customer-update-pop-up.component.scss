@@ -1,0 +1,87 @@
+
+
+
+.main-outer {
+  padding: 10px;
+}
+
+
+
+.mat-form-field-outer {
+  width: 100%;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+}
+
+.row-wrapper{
+  width: 100%;
+  padding-top: 18px;
+  margin: 0 -5px;
+}
+
+.row-wrapper:nth-child(even){
+  background: var(--row-background-color);
+}
+
+
+
+
+
+
+
+
+
+.bottom-button-set {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.button {
+  width: 164px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  size: 14px;
+}
+
+.registration-next {
+  background-color: #4D9CB9;
+}
+
+.button-outer-2{
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.file-input {
+  display: none;
+}
+
+.image-outer-background {
+  width: 350px;
+  height: 350px;
+  cursor: pointer;
+  border: 1px dashed var(--image-outer-background-border-color);
+}
+
+.overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+}
+
+.image-outer {
+  padding-left: 8px;
+}

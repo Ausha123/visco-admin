@@ -1,0 +1,42 @@
+<form #formDirective="ngForm" (ngSubmit)="updateData(formDirective)" [formGroup]="updateUnitTypeForm">
+  <mat-dialog-content>
+    <div class="main-outer">
+      <div class="info-outer">
+        <div class="row input-rows">
+          <div class="product-type-name-outer column col-12 col-sm-6">
+            <div class="mat-form-field-outer">
+              <mat-form-field appearance="outline">
+                <mat-label>Product Type Name</mat-label>
+                <input formControlName="unitTypeName" matInput type="text">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="symbol">
+            <mat-label>Symbol</mat-label>
+            <div
+              (mouseenter)="this.fileImageUploadHiddenEverything = '';this.fileImageOverlay = this.fileImageOverlayChecker"
+              (mouseleave)="this.fileImageUploadHiddenEverything = this.fileImageUploadHiddenEverythingChecker;this.fileImageOverlay = ''"
+              [ngStyle]="{'background-image': 'url('+ FileImageLink +')','background-size': 'cover','background-position':'center'}"
+              class="image-outer-background">
+              <div [ngStyle]="{'background-color':''+fileImageOverlay+''}" class="overlay">
+                <input #fileUpload (change)="onFileSelected($event)" [ngStyle]="{'display' : ''+fileImageUploadHiddenEverything+''}"
+                       class="file-input" type="file">
+                <div [ngStyle]="{'display' : ''+fileImageUploadHiddenEverything+''}" class="file-upload">
+                  {{fileName || "No file uploaded yet."}}
+                  <a (click)="fileUpload.click()" class="upload-btn" color="primary"
+                     mat-mini-fab>
+                    <mat-icon>attach_file</mat-icon>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+  <div class="button-outer">
+    <button [disabled]="updateUnitTypeForm.invalid" type="submit" color="primary" mat-raised-button>Update</button>&nbsp;
+    <button mat-dialog-close mat-raised-button>Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,66 @@
+<form #formDirective="ngForm" (ngSubmit)=" saveDiscount(formDirective)" [formGroup]="newDiscountForm">
+  <div class="main-outer">
+    <div class="row-wrapper  row">
+      <div class="extra-charges-data-outer column col-12 col-sm-6 col-lg col-xl-4">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Discount Name</mat-label>
+            <input  formControlName="discountName"   matInput>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="discount-outer column col-12 col-sm-6 col-lg col-xl-4">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Rate</mat-label>
+            <input type="number" formControlName="rate" matInput>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="product-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <mat-select formControlName="product">
+              <mat-option *ngFor="let p of products" [value]="p.productName" (onSelectionChange)="getProduct(p)">{{p.productName}}</mat-option>
+            </mat-select>
+            <app-loading-type-progress-sub-one
+              *ngIf="loadingService.subProgressOneLoading | async"></app-loading-type-progress-sub-one>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+      <div class="row-wrapper row">
+        <div class="dob-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Start date</mat-label>
+              <input matInput formControlName="startDate" [matDatepicker]="picker1">
+              <!-- <mat-hint>MM/DD/YYYY</mat-hint>-->
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="dob-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>End date</mat-label>
+              <input matInput formControlName="endDate"[matDatepicker]="picker">
+              <!-- <mat-hint>MM/DD/YYYY</mat-hint>-->
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-content-row bottom-button-set">
+        <button  type="submit" [disabled]="newDiscountForm.invalid"
+                 class="button registration-next" color="primary"
+                mat-flat-button>Save Discount
+          <mat-icon>east</mat-icon>
+        </button>
+      </div>
+    </div>
+</form>

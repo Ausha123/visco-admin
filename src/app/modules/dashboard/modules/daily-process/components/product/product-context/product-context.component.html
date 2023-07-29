@@ -1,0 +1,16 @@
+<div class="main-outer">
+  <div class="context-header">
+    <div class="left-outer">
+      <h1 class="header-text">Product Management</h1>
+    </div>
+  </div>
+  <hr>
+
+  <nav mat-tab-nav-bar class="tab-menu">
+
+    <a mat-tab-link class="btn" *ngFor="let tabItem of tabs" [routerLink]="tabItem.route" routerLinkActive="active-route">
+      {{tabItem.label}}
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

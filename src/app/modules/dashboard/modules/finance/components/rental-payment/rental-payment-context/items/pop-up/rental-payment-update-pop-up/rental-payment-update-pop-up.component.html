@@ -1,0 +1,165 @@
+
+<!--<form #formDirective="ngForm"[formGroup]="updateRentalPaymentForm" >-->
+<!--<div class="main-outer">-->
+<!--  <div class="row">-->
+<!--    <div class="dob-outer column col-12 col-sm-6 col-lg-3 col-xl-3">-->
+<!--      <mat-form-field appearance="outline">-->
+<!--        <mat-label>Choose a date</mat-label>-->
+<!--        <input [matDatepicker]="picker" matInput formControlName="rentalPaymentDate">-->
+<!--        &lt;!&ndash; <mat-hint>MM/DD/YYYY</mat-hint>&ndash;&gt;-->
+<!--        <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>-->
+<!--        <mat-datepicker #picker></mat-datepicker>-->
+<!--      </mat-form-field>-->
+<!--    </div>-->
+<!--    <div class="discount-outer column col-12 col-sm-6 col-lg-3 col-xl-3">-->
+<!--      <div class="mat-form-field-outer col-mg">-->
+<!--        <mat-form-field class="full-width" appearance="outline">-->
+<!--          <mat-label>Discount</mat-label>-->
+<!--          <input formControlName="discount"  type="number"  matInput>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="tax-outer column col-12 col-sm-6 col-lg-3 col-xl-3">-->
+<!--      <div class="mat-form-field-outer col-mg">-->
+<!--        <mat-form-field class="full-width" appearance="outline">-->
+<!--          <mat-label>Tax</mat-label>-->
+<!--          <input  formControlName="tax" type="number"   matInput>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="extra-charges-outer column col-12 col-sm-6 col-lg-3 col-xl-3">-->
+<!--      <div class="mat-form-field-outer col-mg">-->
+<!--        <mat-form-field class="full-width" appearance="outline">-->
+<!--          <mat-label>Extra Charges </mat-label>-->
+<!--          <input formControlName="extraCharges" type="number"   matInput>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--&lt;!&ndash;    <div class="extra-charges-data-outer column col-12 col-sm-6 col-lg-4 col-xl-4">&ndash;&gt;-->
+<!--&lt;!&ndash;      <div class="mat-form-field-outer col-mg">&ndash;&gt;-->
+<!--&lt;!&ndash;        <mat-form-field class="full-width" appearance="outline">&ndash;&gt;-->
+<!--&lt;!&ndash;          <mat-label>Extra Charges Data</mat-label>&ndash;&gt;-->
+<!--&lt;!&ndash;          <input  formControlName="programName"  matInput>&ndash;&gt;-->
+<!--&lt;!&ndash;        </mat-form-field>&ndash;&gt;-->
+<!--&lt;!&ndash;      </div>&ndash;&gt;-->
+<!--&lt;!&ndash;    </div>&ndash;&gt;-->
+<!--    <div class="payment-outer column col-12 col-sm-6 col-lg-4 col-xl-4">-->
+<!--      <div class="mat-form-field-outer col-mg">-->
+<!--        <mat-form-field class="full-width" appearance="outline">-->
+<!--          <mat-label>Payment</mat-label>-->
+<!--          <input formControlName="payment" type="number"   matInput>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="balance-outer column col-12 col-sm-6 col-lg-4 col-xl-4">-->
+<!--      <div class="mat-form-field-outer col-mg">-->
+<!--        <mat-form-field class="full-width" appearance="outline">-->
+<!--          <mat-label>Balance</mat-label>-->
+<!--          <input  formControlName="balance" type="number"   matInput>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="payment-type-outer column col-12 col-sm-6 col-lg col-xl-4">-->
+<!--      <div class="mat-form-field-outer col-mg">-->
+<!--        <mat-form-field class="full-width" appearance="outline">-->
+<!--          <mat-label>Payment Type</mat-label>-->
+<!--          <mat-select formControlName="paymentType">-->
+<!--            <mat-option *ngFor="let type of payment_types" [value]="type.type">{{type.type}}</mat-option>-->
+<!--          </mat-select>-->
+<!--        </mat-form-field>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<div class="button-outer">-->
+<!--  <button color="primary" mat-raised-button (click)="updateRentalPayment()">Update</button>&nbsp;-->
+<!--  <button cdkFocusInitial mat-raised-button>Cancel</button>-->
+<!--</div>-->
+<!--</form>-->
+
+<form #formDirective="ngForm"[formGroup]="updateRentalPaymentForm" >
+  <div class="main-outer">
+    <div class="row-wrapper row">
+      <div class="payment-outer column col-12 col-sm-6 col-lg-4 col-xl-6">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Payment</mat-label>
+            <input formControlName="payment" matInput type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="payment-type-outer column col-12 col-sm-6 col-lg col-xl-6">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Payment Type</mat-label>
+            <mat-select formControlName="paymentType">
+              <mat-option *ngFor="let type of payment_types" [value]="type.type">{{type.type}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+   <!--   <div class="payment-type-outer column col-12 col-sm-6 col-lg col-xl-4">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Customer NIC</mat-label>
+            <mat-select formControlName="rentId">
+              <mat-option *ngFor="let type of customerNICS" [value]="type.rentId">{{type.nic}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>-->
+    </div>
+    <div class="row-wrapper row">
+      <div class="extra-charges-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Extra Charges</mat-label>
+            <input formControlName="extraCharges" matInput type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="discount-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Discount</mat-label>
+            <input formControlName="discount" matInput type="number">
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="tax-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Tax</mat-label>
+            <input formControlName="tax" matInput type="number">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row-wrapper row">
+      <div class="dob-outer column col-12 col-sm-6 col-lg-3 col-xl-6">
+        <div class="mat-form-field-outer">
+          <mat-form-field appearance="outline">
+            <mat-label>Choose a date</mat-label>
+            <input [matDatepicker]="picker" matInput formControlName="rentalPaymentDate">
+            <!-- <mat-hint>MM/DD/YYYY</mat-hint>-->
+            <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="balance-outer column col-12 col-sm-6 col-lg-4 col-xl-6">
+        <div class="mat-form-field-outer col-mg">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Balance</mat-label>
+            <input formControlName="balance" matInput type="number">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+   <div class="button-outer">
+      <button color="primary" mat-raised-button (click)="updateRentalPayment()">Update</button>
+      <button mat-dialog-close mat-raised-button>Cancel</button>
+    </div>
+  </div>
+</form>

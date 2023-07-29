@@ -1,0 +1,43 @@
+<h2 class="property-name">
+  {{unitType.unitName}}
+</h2>
+<h5 class="property-id">
+  {{unitType.unitId}}
+</h5>
+<hr>
+
+<mat-nav-list>
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>published_with_changes</mat-icon>
+    </div>
+    <div class="left-data-set">
+      <a mat-list-item (click)="changeActiveState($event)">
+        <span mat-line>{{unitType.activeState && 'Unavailable' || 'Available'}} This Unit Type</span>
+        <span mat-line>if you want to Modify this product type must click here to {{unitType.activeState && 'Unavailable' || 'Available'}} Unit Type</span>
+      </a>
+    </div>
+  </div>
+  <div  class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>edit_note</mat-icon>
+    </div>
+    <div class="left-data-set" (click)="updatePopUp($event)">
+      <a mat-list-item>
+        <span mat-line>Update This Unit Type</span>
+        <span mat-line>click here to update selected Unit Type</span>
+      </a>
+    </div>
+  </div>
+  <!--<div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>delete_sweep</mat-icon>
+    </div>
+    <div class="left-data-set" (click)="deletePopUp($event)">
+      <a mat-list-item >
+        <span mat-line>Delete This Unit Type Permanently</span>
+        <span mat-line>if you want to Delete the Unit Type click here</span>
+      </a>
+    </div>
+  </div>-->
+</mat-nav-list>

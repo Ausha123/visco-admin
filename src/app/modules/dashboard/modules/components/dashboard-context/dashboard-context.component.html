@@ -1,0 +1,13 @@
+<div class="main-wrap">
+  <div class="left-slider-wrap" *ngIf="slideType" [@navSlider]>
+    <app-main-left-nav-bar (slideEmitter)="slide()"></app-main-left-nav-bar>
+  </div>
+  <div class="right-side-wrap">
+    <div class="top-bar-wrap">
+      <app-dash-board-header-top-bar (slideEmitter)="slide()"></app-dash-board-header-top-bar>
+    </div>
+    <div class="dashboard-content-loading-pane">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

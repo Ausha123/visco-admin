@@ -1,0 +1,46 @@
+<mat-nav-list>
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>visibility</mat-icon>
+    </div>
+    <div (click)="viewRentData($event)" class="left-data-set">
+      <a mat-list-item>
+        <span mat-line>View This Rent Data</span>
+        <span mat-line>click here to View selected Rent Data</span>
+      </a>
+    </div>
+  </div>
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>sync_problem</mat-icon>
+    </div>
+    <div (click)="newDamagedData($event)" class="left-data-set">
+      <a mat-list-item>
+        <span mat-line>New Damaged Data</span>
+        <span mat-line>click here to Add New Damaged Data</span>
+      </a>
+    </div>
+  </div>
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>edit_note</mat-icon>
+    </div>
+    <div (click)="updatePopUp($event)" class="left-data-set">
+      <a mat-list-item>
+        <span mat-line>Update This Rent Data</span>
+        <span mat-line>click here to update selected Rent Data</span>
+      </a>
+    </div>
+  </div>
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>delete_sweep</mat-icon>
+    </div>
+    <div (click)="deletePopUp($event)" class="left-data-set">
+      <a mat-list-item>
+        <span mat-line>Delete This Rent Data Permanently</span>
+        <span mat-line>if you want to Delete the Rent Data click here</span>
+      </a>
+    </div>
+  </div>
+</mat-nav-list>

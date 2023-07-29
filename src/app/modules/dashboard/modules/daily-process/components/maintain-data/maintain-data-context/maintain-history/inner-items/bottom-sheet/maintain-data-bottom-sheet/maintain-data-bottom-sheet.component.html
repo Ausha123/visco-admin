@@ -1,0 +1,25 @@
+<mat-nav-list>
+  <div  class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>edit_note</mat-icon>
+    </div>
+    <div class="left-data-set" (click)="updatePopUp($event)">
+      <a mat-list-item>
+        <span mat-line>Update This Maintain Data</span>
+        <span mat-line>click here to update selected Maintain Data</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="nav-list-data-outer">
+    <div class="right-data-set">
+      <mat-icon>delete_sweep</mat-icon>
+    </div>
+    <div class="left-data-set" (click)="deletePopUp($event)">
+      <a mat-list-item >
+        <span mat-line>Delete This Maintain Data Permanently</span>
+        <span mat-line>if you want to Delete the Maintain Data click here</span>
+      </a>
+    </div>
+  </div>
+</mat-nav-list>

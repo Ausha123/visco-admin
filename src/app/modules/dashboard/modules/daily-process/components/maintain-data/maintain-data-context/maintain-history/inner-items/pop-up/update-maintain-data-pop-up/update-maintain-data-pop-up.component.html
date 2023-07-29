@@ -1,0 +1,42 @@
+<form #formDirective="ngForm" (ngSubmit)=" updateData(formDirective)" [formGroup]="updateMaintainDataForm">
+  <mat-dialog-content>
+    <div class="main-outer">
+      <div class="info-outer">
+        <div class="row input-rows">
+          <div class="product-outer column col-12 col-sm-12 col-lg-5 col-xl-4">
+            <div class="mat-form-field-outer">
+              <mat-form-field appearance="outline">
+                <mat-label>Product</mat-label>
+                <mat-select formControlName="productId">
+                  <mat-option *ngFor="let product of products"
+                              [value]="product?.productId">{{product?.productName}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="cost-outer column col-12 col-sm-12 col-lg-5 col-xl-4">
+            <div class="mat-form-field-outer">
+              <mat-form-field appearance="outline">
+                <mat-label>cost</mat-label>
+                <input formControlName="cost" matInput type="number">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="note-outer column col-12">
+            <div class="mat-form-field-outer">
+              <mat-form-field appearance="outline">
+                <mat-label>Note</mat-label>
+                <textarea formControlName="note" matInput rows="7"></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <div class="button-outer">
+    <button [disabled]="updateMaintainDataForm.invalid" color="primary" mat-raised-button type="submit">Update</button>&nbsp;
+    <button mat-dialog-close mat-raised-button>Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,17 @@
+<div class="main-outer">
+  <div class="context-header row">
+    <div class="left-outer  col-12 col-sm-12 col-lg-5 col-xl-5">
+      <h1 class="header-text">Attendance Management</h1>
+    </div>
+  </div>
+  <hr>
+
+  <nav mat-tab-nav-bar class="tab-menu">
+
+    <a mat-tab-link class="btn" *ngFor="let tabItem of tabs" [routerLink]="tabItem.route"
+       routerLinkActive="active-route">
+      {{tabItem.label}}
+    </a>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

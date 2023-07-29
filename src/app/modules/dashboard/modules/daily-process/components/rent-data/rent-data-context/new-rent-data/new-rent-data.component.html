@@ -1,0 +1,112 @@
+<form #formDirective="ngForm" (ngSubmit)=" submitData(formDirective)" [formGroup]="newRentDataForm">
+  <div class="main-outer">
+    <div class="info-outer">
+      <div class="row input-rows">
+        <div class="customer-nic-outer column col-12 col-sm-12 col-lg-5 col-xl-4">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Customer NIC</mat-label>
+              <mat-select formControlName="customerNIC">
+                <mat-option (click)="customerDetails(customer)" *ngFor="let customer of customerArray" [value]="customer.nic">{{customer.nic}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-5 col-xl-4 customer-Name-outer">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline" class="text-input-inner">
+              <mat-label>{{customerName}}</mat-label>
+              <input matInput disabled type="text">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row rent-details">
+        <div class="col-12 page-content-row">
+          <form #formDirective2="ngForm" (ngSubmit)="addRentDetails(formDirective2)"
+                [formGroup]="rentalForm">
+            <div class="rental-outer row">
+              <div class="col-12 col-sm-12 col-lg-5 col-xl-4 return-note-outer">
+                <div class="mat-form-field-outer">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Product</mat-label>
+                    <mat-select formControlName="productId">
+                      <mat-option *ngFor="let product of products"
+                                  [value]="product?.productId">{{product?.productName}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-lg-5 col-xl-4 quantity-outer">
+                <div class="mat-form-field-outer">
+                  <mat-form-field appearance="outline" class="text-input-inner">
+                    <mat-label>Quantity</mat-label>
+                    <input formControlName="quantity" matInput type="number">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="return-note-outer column col-12">
+                <div class="mat-form-field-outer">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Return Note</mat-label>
+                    <textarea formControlName="returnNote" matInput rows="7"></textarea>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-12 page-content-row">
+                <div class="contact-add-button-outer">
+                  <button [disabled]="rentalForm.invalid" mat-raised-button type="submit">+ Add</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product Id</th>
+              <th scope="col">quantity</th>
+              <th scope="col">Return Note</th>
+              <th scope="col">Operation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let detail of rentDetailsArray; index as num">
+              <td>
+                <div class="data-wrapper">
+                  <span>{{num + 1}}</span>
+                </div>
+              </td>
+              <td>
+                <span>{{detail?.productId}}</span>
+              </td>
+              <td>
+                <span>{{detail?.quantity}}</span>
+              </td>
+              <td>
+                <span>{{detail?.returnNote}}</span>
+              </td>
+              <td>
+                <div class="data-wrapper">
+                  <button (click)="removeContact(num)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="page-content-row bottom-button-set">
+        <button [disabled]="newRentDataForm.invalid" class="button registration-next" color="primary" mat-flat-button
+                type="submit">Save Rent Data&nbsp;
+          <mat-icon>east</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+

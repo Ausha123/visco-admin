@@ -1,0 +1,42 @@
+<div class="main-outer">
+  <div class="left-outer outer">
+    <div class="ham-outer">
+      <button class="ham-button" (click)="slide()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="logo-outer" routerLink="/dashboard/dealer">
+      <h1 class="logo-name">XXX</h1>
+      <p class="sub-title">Admin Panel</p>
+    </div>
+    <!--  <div class="search-outer" *ngIf="searchVisibleState">
+        <input type="search" name="" id="" class="search" placeholder="Search here">
+      </div>-->
+  </div>
+  <div class="right-outer outer">
+    <div class="small-search-outer" >
+      <mat-icon></mat-icon>
+    </div>
+    <div class="notification-outer">
+      <mat-icon >notifications</mat-icon>
+    </div>
+    <div class="profile-outer">
+      <div class="profile-avatar-outer">
+<!--        <img-->
+<!--          src=""-->
+<!--          alt="Avatar">-->
+        <h2 style="margin: 0">Ausha</h2>
+      </div>
+      <div class="profile-name-outer" >
+        <span class="profile-name"></span>&nbsp; <!--<mat-icon>arrow_drop_down</mat-icon>-->
+      </div>
+      <!--[matMenuTriggerFor]="topBarMenu"-->
+      <mat-menu #topBarMenu="matMenu">
+        <button mat-menu-item >
+          <span>Sign Out</span>
+        </button>
+      </mat-menu>
+
+    </div>
+  </div>
+</div>

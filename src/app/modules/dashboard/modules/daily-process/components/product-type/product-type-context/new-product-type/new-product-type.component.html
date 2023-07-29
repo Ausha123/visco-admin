@@ -1,0 +1,22 @@
+<form #formDirective="ngForm" (ngSubmit)="submitData(formDirective)" [formGroup]="newProductTypeForm">
+  <div class="main-outer">
+    <div class="info-outer">
+      <div class="row input-rows">
+        <div class="product-type-name-outer column col-12 col-sm-6">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Product Type Name</mat-label>
+              <input formControlName="productTypeName" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="page-content-row bottom-button-set">
+        <button [disabled]="newProductTypeForm.invalid" class="button registration-next" color="primary"
+                mat-flat-button type="submit">Save Product&nbsp;Type
+          <mat-icon>east</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

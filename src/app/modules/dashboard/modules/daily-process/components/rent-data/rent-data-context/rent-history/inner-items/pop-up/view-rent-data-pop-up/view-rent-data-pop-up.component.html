@@ -1,0 +1,51 @@
+<div class="outer">
+  <div class="customer-details row">
+
+    <div class="left col-6">
+      <div class="detail">
+        <h2>Name &nbsp;</h2>
+        <h3>:&nbsp; {{allRentDataArray[0]?.name}}</h3>
+      </div>
+      <div class="detail">
+        <h2>Contact &nbsp;</h2>
+        <h3>:&nbsp; {{allRentDataArray[0]?.contact}}</h3>
+      </div>
+    </div>
+    <div class="right col-6">
+      <div class="detail">
+        <h2>NIC &nbsp;</h2>
+        <h3>:&nbsp; {{allRentDataArray[0]?.nic}}</h3>
+      </div>
+    </div>
+    <div class="detail">
+      <h2>address &nbsp;</h2>
+      <h3>:&nbsp; {{allRentDataArray[0]?.address}}</h3>
+    </div>
+    <div class="view-id-copy">
+      <a href=""> View ID copy</a>
+    </div>
+  </div>
+  <hr>
+  <div class="rent-details row">
+    <div class="left col-6">
+      <div class="detail">
+        <h2>Product Name &nbsp;</h2>
+        <h3>:&nbsp; {{allRentDataArray[0]?.productName}}</h3>
+      </div>
+    </div>
+    <div class="right col-6">
+      <div class="detail">
+        <h2>Rent Date &nbsp;</h2>
+        <h3>:&nbsp; {{allRentDataArray[0]?.rentDate |date: 'd-MMM-y'}}</h3>
+      </div>
+    </div>
+    <div class="detail">
+      <h2>Return Note &nbsp;</h2>
+      <h3>:&nbsp; {{allRentDataArray[0]?.nic}}</h3>
+    </div>
+  </div>
+  <br>
+  <div class="button-outer">
+    <button mat-raised-button mat-dialog-close> Cancel </button>
+  </div>
+</div>

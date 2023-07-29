@@ -1,0 +1,88 @@
+.main-outer {
+  padding: 10px;
+}
+
+.input-rows {
+  margin: 0;
+}
+
+.column {
+  padding: 5px;
+}
+
+.mat-form-field-outer {
+  width: 100%;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+}
+
+.example-section {
+  margin: 10px 0 15px 5px;
+}
+
+.other-details-holder {
+  margin-top: 15px;
+}
+
+.other-details-outer {
+  background: #E5E5E5;
+  padding: 10px 0;
+  margin: 10px 0;
+}
+
+.other-details-header-outer {
+  display: flex;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+
+    color: #2980B9;
+  }
+
+  mat-icon {
+    font-size: 20px;
+    margin-left: 5px;
+  }
+
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.other-details-input-row-outer {
+  padding: 0 20px;
+}
+
+
+.bottom-button-set {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.button {
+  width: 180px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  size: 14px;
+}
+
+.registration-next {
+  background-color: #4D9CB9;
+}

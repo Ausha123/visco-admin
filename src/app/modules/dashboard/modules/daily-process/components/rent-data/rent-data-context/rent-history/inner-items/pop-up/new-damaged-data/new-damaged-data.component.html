@@ -1,0 +1,31 @@
+<form #formDirective="ngForm" (ngSubmit)="submitData(formDirective)" [formGroup]="newDamageDetailForm">
+
+  <div class="main-outer">
+    <div class="info-outer">
+      <div class="row input-rows">
+        <div class="fine-outer column col-12 col-sm-12 col-lg-5 col-xl-4">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Fine</mat-label>
+              <input formControlName="fine" matInput type="number">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="note-outer column col-12">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Note</mat-label>
+              <textarea formControlName="note" matInput rows="7"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="page-content-row bottom-button-set">
+        <button [disabled]="newDamageDetailForm.invalid" type="submit" class="button registration-next" color="primary"
+                mat-flat-button>Save Damaged Data&nbsp;
+          <mat-icon>east</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

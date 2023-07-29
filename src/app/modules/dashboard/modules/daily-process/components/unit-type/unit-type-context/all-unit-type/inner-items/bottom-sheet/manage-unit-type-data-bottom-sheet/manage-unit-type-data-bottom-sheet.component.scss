@@ -1,0 +1,19 @@
+.nav-list-data-outer {
+  height: auto;
+  width: 100%;
+  display: flex;
+}
+
+.left-data-set {
+  flex: 1;
+}
+
+.right-data-set {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+mat-icon {
+  color: #7f8c8d;
+}

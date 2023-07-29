@@ -1,0 +1,63 @@
+<form [formGroup]="searchForm">
+<div class="row search">
+  <div class="search-bar col-12 col-sm-6 col-lg-6 col-xl-6">
+    <div class="text-input-outer">
+      <div class="text-input-inner">
+        <mat-icon>search</mat-icon>
+        <input formControlName="searchText" placeholder="Search here" [(ngModel)]="searchText" type="text">
+      </div>
+    </div>
+  </div>
+<!--  <div class="date-picker col-12 col-sm-6 col-lg-6 col-xl-6">-->
+<!--    <mat-form-field appearance="outline">-->
+<!--      <mat-label>Enter a date range</mat-label>-->
+<!--      <mat-date-range-input [rangePicker]="picker">-->
+<!--        <input matStartDate placeholder="Start date">-->
+<!--        <input matEndDate placeholder="End date">-->
+<!--      </mat-date-range-input>-->
+<!--      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>-->
+<!--      <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>-->
+<!--      <mat-date-range-picker #picker></mat-date-range-picker>-->
+<!--    </mat-form-field>-->
+<!--  </div>-->
+</div>
+</form>
+<div class="table-outer">
+<table>
+  <thead>
+  <tr>
+    <th scope="col" style="width: 10%">full name</th>
+    <th scope="col" style="width: 10%">email</th>
+    <th scope="col" style="width: 10%">contact</th>
+    <th scope="col" style="width: 10%">address</th>
+    <th scope="col" style="width: 10%">nic</th>
+    <th scope="col" style="width: 10%"> dob</th>
+    <th scope="col" style="width: 10%"> gender</th>
+<!--    <th scope="col" style="width: 10%"> other data</th>-->
+    <th scope="col" style="width: 10%"> payment type</th>
+<!--    <th scope="col" style="width: 10%">Manage Data</th>-->
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let e of allEmployee" (click)="manage(e)">
+    <td>{{e.fullName}}</td>
+    <td>{{e.email}}</td>
+    <td>{{e.contact}}</td>
+    <td>{{e.address}}</td>
+    <td>{{e.nic}}</td>
+    <td>{{e.dob | date:'d/M/y'}}</td>
+    <td>{{e.gender}}</td>
+    <td>{{e.paymentType}}</td>
+
+<!--    <td><button mat-flat-button color="primary" (click)="manage(e)">Manage Data</button></td>-->
+  </tr>
+  </tbody>
+</table>
+</div>
+<mat-paginator [length]=dataCount
+               [pageSize]=pageSize
+               [pageIndex]=page
+               [pageSizeOptions]=pageSizeOptions
+               (page)="pageEvent = getServerData($event)"
+               aria-label="Select page">
+</mat-paginator>

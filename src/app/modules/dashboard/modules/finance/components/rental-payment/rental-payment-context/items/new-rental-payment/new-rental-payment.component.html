@@ -1,0 +1,91 @@
+<form #formDirective="ngForm" (ngSubmit)=" submitData(formDirective)" [formGroup]="newRentalPaymentForm" >
+  <div class="main-outer">
+      <div class="row-wrapper row">
+        <div class="payment-outer column col-12 col-sm-6 col-lg-4 col-xl-4">
+          <div class="mat-form-field-outer col-mg">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Payment</mat-label>
+              <input formControlName="payment" matInput type="number">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="payment-type-outer column col-12 col-sm-6 col-lg col-xl-4">
+          <div class="mat-form-field-outer col-mg">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Payment Type</mat-label>
+              <mat-select formControlName="paymentType">
+                <mat-option *ngFor="let type of payment_types" [value]="type.type">{{type.type}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="payment-type-outer column col-12 col-sm-6 col-lg col-xl-4">
+          <div class="mat-form-field-outer col-mg">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Customer NIC</mat-label>
+              <mat-select formControlName="rentId">
+                <mat-option *ngFor="let type of customerNICS" [value]="type.rentId">{{type.nic}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row-wrapper row">
+        <div class="extra-charges-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+          <div class="mat-form-field-outer col-mg">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Extra Charges</mat-label>
+              <input formControlName="extraCharges" matInput type="number">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="discount-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+          <div class="mat-form-field-outer col-mg">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Discount</mat-label>
+              <input formControlName="discount" matInput type="number">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="tax-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+          <div class="mat-form-field-outer col-mg">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Tax</mat-label>
+              <input formControlName="tax" matInput type="number">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row-wrapper row">
+        <div class="dob-outer column col-12 col-sm-6 col-lg-3 col-xl-4">
+          <div class="mat-form-field-outer">
+            <mat-form-field appearance="outline">
+              <mat-label>Choose a date</mat-label>
+              <input [matDatepicker]="picker" matInput formControlName="rentalPaymentDate">
+              <!-- <mat-hint>MM/DD/YYYY</mat-hint>-->
+              <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="balance-outer column col-12 col-sm-6 col-lg-4 col-xl-4">
+          <div class="mat-form-field-outer col-mg">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>Balance</mat-label>
+              <input formControlName="balance" matInput type="number">
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="page-content-row bottom-button-set">
+        <button  type="submit" [disabled]="newRentalPaymentForm.invalid"
+                class="button registration-next" color="primary"
+                mat-flat-button>Save Rental
+          <mat-icon>east</mat-icon>
+        </button>
+      </div>
+    </div>
+</form>
+

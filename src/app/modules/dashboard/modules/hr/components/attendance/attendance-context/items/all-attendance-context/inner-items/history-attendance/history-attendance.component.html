@@ -1,0 +1,53 @@
+<!--<div class="row search">-->
+<!--  <div class="search-bar col-12 col-sm-6 col-lg-6 col-xl-6">-->
+<!--    <div class="text-input-outer">-->
+<!--      <div class="text-input-inner">-->
+<!--        <mat-icon>search</mat-icon>-->
+<!--        <input placeholder="Search here" type="text">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="date-picker col-12 col-sm-6 col-lg-6 col-xl-6">-->
+<!--    <mat-form-field appearance="outline">-->
+<!--      <mat-label>Enter a date range</mat-label>-->
+<!--      <mat-date-range-input [rangePicker]="picker">-->
+<!--        <input matStartDate placeholder="Start date">-->
+<!--        <input matEndDate placeholder="End date">-->
+<!--      </mat-date-range-input>-->
+<!--      <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>-->
+<!--      <mat-datepicker-toggle [for]="picker" matSuffix></mat-datepicker-toggle>-->
+<!--      <mat-date-range-picker #picker></mat-date-range-picker>-->
+<!--    </mat-form-field>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="table-outer">
+<table>
+  <thead>
+  <tr>
+    <th scope="col" style="width: 10%">Date Of Attend</th>
+    <th scope="col" style="width: 10%">Date of Leave</th>
+<!--    <th scope="col" style="width: 10%">Employee Id</th>-->
+    <th scope="col" style="width: 10%">Extra Note</th>
+    <th scope="col" style="width: 10%">Employee Name</th>
+<!--    <th scope="col" style="width: 10%">Manage Data</th>-->
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let a of allAttendance" (click)="manage(a)">
+    <td>{{a.attentDate| date:'d/M/y'}}</td>
+    <td>{{a.leaveDate|  date:'d/M/y'}}</td>
+    <td>{{a.extraNote}}</td>
+    <td>{{a.fullName}}</td>
+<!--    <td><button mat-flat-button color="primary" (click)="manage(a)">Manage Data</button></td>-->
+  </tr>
+  </tbody>
+</table>
+</div>
+<mat-paginator [length]=dataCount
+               [pageSize]=pageSize
+               [pageIndex]=page
+               [pageSizeOptions]=pageSizeOptions
+               (page)="pageEvent = getServerData($event)"
+               aria-label="Select page">
+</mat-paginator>
